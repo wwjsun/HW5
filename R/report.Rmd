@@ -1,0 +1,36 @@
+---
+title: "Homework 5"
+author: "Jane Wei"
+date: "`r format(Sys.Date(), '%Y-%m-%d')`"
+output: html_document
+---
+
+```{r, include = FALSE}
+here::i_am("R/report.Rmd")
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+#Abstract 
+The study compared patients undergoing aortic surgery following one vs. multiple cardiac intervention. 
+
+#Patients and methods
+The data contains 360 subjects who had their first re-do aortic surgery and 69 subjects who had multiple re-do aortic surgeries. The four hundred and twenty-nine patients all came from the same US academic healthcare system. 
+
+#Results
+We're able to summarize the important variables for the Frist_Redo vs. Multiple_Redo analysis. 
+```{r, Table_Redo, echo = FALSE}
+
+Table_Redo <- readRDS(here::here( "figs", "Table_Redo.rds"
+))
+Table_Redo
+```
+
+
+The Kaplan Meier survival curve for both group looks like this: 
+```{r, echo = FALSE}
+knitr::include_graphics(here::here("figs", "KM_figure.png"))
+```
+#Discussion
+As we see in Figure \@ref(fig:KM_figure.png), the multiple redo group has a sharp drop within 30 days compare to the first redo group.
+
+
